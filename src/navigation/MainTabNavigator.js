@@ -1,11 +1,11 @@
 import React from 'react';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import {createStackNavigator} from '@react-navigation/stack';
+// import {createStackNavigator} from '@react-navigation/stack';
 
-import Camera from '../screens/Camera';
-import Calls from '../screens/Calls';
-import Chats from '../screens/Chats';
-import Status from '../screens/Status';
+import Camera from '../screens/CameraScreen';
+import Calls from '../screens/CallsScreen';
+import Chats from '../screens/ChatsScreen';
+import Status from '../screens/StatusScreen';
 
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Colors from '../constants/Colors';
