@@ -37,10 +37,11 @@ const UserObject = {
   imageUri: '',
 };
 
-const MessageObject = {
+export const MessageObject = {
   id: '',
   content: '',
   createdAt: '',
+  user: UserObject,
 };
 
 export const ChatRoom = {

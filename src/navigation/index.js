@@ -4,16 +4,19 @@ import {View, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import StoryScreen from '../screens/StoryScreen';
-
+import ChatRoomScreen from '../screens/ChatRoomScreen';
 import MainTab from './MainTabNavigator';
 
 import Octicons from 'react-native-vector-icons/Octicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Colors from '../constants/Colors';
 
+FontAwesome.loadFont();
 Octicons.loadFont();
 MaterialCommunityIcons.loadFont();
+MaterialIcons.loadFont();
 
 const RootStack = createStackNavigator();
 
@@ -46,6 +49,30 @@ const RootRouter = () => (
         name="Root"
         component={MainTab}
         options={{title: 'WhatsApp'}}
+      />
+      <RootStack.Screen
+        name="ChatRoom"
+        component={ChatRoomScreen}
+        options={({route}) => ({
+          title: route.params.name,
+          headerRight: () => (
+            <View
+              style={{
+                flexDirection: 'row',
+                width: 100,
+                justifyContent: 'space-between',
+                marginRight: 10,
+              }}>
+              <FontAwesome name="video-camera" size={22} color={'white'} />
+              <MaterialIcons name="call" size={22} color={'white'} />
+              <MaterialCommunityIcons
+                name="dots-vertical"
+                size={22}
+                color={'white'}
+              />
+            </View>
+          ),
+        })}
       />
     </RootStack.Navigator>
   </NavigationContainer>
