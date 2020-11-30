@@ -4,10 +4,11 @@ import ChatListItem from '../../components/ChatListItem';
 
 import {ChatRoomValue, mapDataChatRoom} from '../../constants/types';
 import chatRooms from '../../constants/ChatRoom';
+import NewMessageButton from '../../components/NewMessageButton';
 
 const Chats = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <FlatList
         keyExtractor={({id}) => id}
         data={chatRooms}
@@ -15,11 +16,17 @@ const Chats = () => {
           <ChatListItem chatRoom={mapDataChatRoom(item)} />
         )}
       />
-      {/* <ChatListItem chatRoom={mapDataChatRoom(chatRooms[0])} /> */}
+      <NewMessageButton />
     </View>
   );
 };
 
 export default Chats;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+  },
+});

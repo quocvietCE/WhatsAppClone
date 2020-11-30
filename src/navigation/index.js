@@ -5,6 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import ChatRoomScreen from '../screens/ChatRoomScreen';
+import ContactsScreen from '../screens/ContactsScreen';
 import MainTab from './MainTabNavigator';
 
 import Octicons from 'react-native-vector-icons/Octicons';
@@ -74,6 +75,7 @@ const RootRouter = () => (
           ),
         })}
       />
+      <RootStack.Screen name="Contacts" component={ContactsScreen} />
     </RootStack.Navigator>
   </NavigationContainer>
 );
